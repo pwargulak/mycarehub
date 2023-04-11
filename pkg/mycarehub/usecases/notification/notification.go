@@ -255,6 +255,7 @@ func (n UseCaseNotificationImpl) FetchNotificationTypeFilters(ctx context.Contex
 			return nil, err
 		}
 		parameters.FacilityID = staff.DefaultFacility.ID
+		parameters.ProgramID = staff.ProgramID
 	}
 
 	notificationTypes, err := n.Query.ListAvailableNotificationTypes(ctx, parameters)
